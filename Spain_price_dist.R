@@ -3,7 +3,6 @@ library(reshape2)
 library(patchwork)
 
 hypothesis_df2 = hypothesis_df %>% filter(price <= 50)
-register_google(key = "AIzaSyDFLXTtkVZQZ-raMm1KuHsAHEm3B8WRFz4") 
 price_distrib <- function(city){
   hypothesis_df_B = hypothesis_df2 %>% filter(neighbourhood == city)
   fld <- with(hypothesis_df_B, akima::interp(x = longitude, y = latitude, z = price, duplicate = "mean"))
